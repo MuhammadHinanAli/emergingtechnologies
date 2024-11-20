@@ -1,9 +1,9 @@
 # Emerging Technologies Repository
 
-# TASK 1: Third-Order Letter Approximation Model
+# Task 1: Third-Order Letter Approximation Model
 
-# TASK 2: Third-order letter approximation generation
+# Task 2: Third-order letter approximation generation
 
-# TASK 3: Analyze Your Model
+# Task 3: Analyze Your Model
 
-# TASK 4: Export Model as JSON File
+# Task 4: Export Model as JSON File
