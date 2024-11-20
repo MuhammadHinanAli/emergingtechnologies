@@ -1,4 +1,4 @@
-# EMERGING TECHONOLOGIES REPOSITORY
+# Emerging Technologies Repository
 
 # TASK 1: Third-Order Letter Approximation Model
 
