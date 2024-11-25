@@ -8,13 +8,13 @@ The purpose of this model is to count the occurances of every three-character se
 The model can provide insights into frequency of specific letter sequences. 
 
 ### Functionality:
-#### 1. load_and_clean_text(file_paths)
+#### 1. clean_text(file_paths)
    - Loads mutiple text files, removes unwated characters, and converts all characters to uppercase.
    - Cleans the text by retaining only alphabetic characters, full stops, and spaces.
    - Paramater: file_paths - A list of file paths to the Project Gunteberg text files.
    - Returns: A cleaned string ready for trigram analysis.
   
-#### 2. generate_tigrams(text)
+#### 2. generate_trigrams(text)
    - Generates a trigram model by counting the occurances of every three-characters sequneces in the cleaned text.
    - Parameter: text - The cleaned string of text from which to extract trigrams.
    - Returns: A dictionary where the keys are trigrams and the values are their respective counts.
