@@ -59,8 +59,8 @@ Finally, calculates the percentage of valid English words in the string.
 
 # Task 4: Export Model as JSON File
 ### Overview:
-Export your trigram model as a JavaScript Object Notation (JSON) file, preserving its structure and data. 
-Save the file in your repository with the name trigrams.json to ensure easy sharing and future use in various applications.
+This task exports your trigram model as a JavaScript Object Notation (JSON) file, preserving its structure and data. 
+Also saves the file in your repository with the name trigrams.json to ensure easy sharing and future use in various applications.
 
 ### Functionality:
 
