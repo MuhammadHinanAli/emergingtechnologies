@@ -2,7 +2,7 @@
 
 # Task 1: Third-Order Letter Approximation Model
 
-### Overview
+### Overview:
 This project implements a third-order letter approximation model using five plain-text works from Project Gutenberg. 
 The purpose of this model is to count the occurances of every three-character sequence in the cleaned text of these books.
 The model can provide insights into frequency of specific letter sequences. 
@@ -26,8 +26,41 @@ The model can provide insights into frequency of specific letter sequences.
      - n - The number of top trigrams to display.
    - Displays: Displays the result directly.
 
-# Task 2: Third-order letter approximation generation
+# Task 2: Third-order letter approximation generation#
+
+### Overview:
+This Task generates a 10,000-character string starting with "TH" using a trigram model. 
+It determines the next character based on the last two characters by selecting from possible trigrams, weighted by their frequencies. 
+Repeats until the string reaches the desired length.
+
+### Functionality:
+#### 1. generate_next_char(trigram_counts, prev_two_chars)
+
+#### 2. generate_text(trigram_counts, length=10000)
+
 
 # Task 3: Analyze Your Model
 
+### Overview:
+This task has a words.txt file, containing a list of English words, from the provided repository to your own repository. 
+This list is used to analyze the 10,000-character string generated earlier. 
+Spliting the string into individual words and check each one against the word list to determine if it is a valid English word. 
+Finally, calculates the percentage of valid English words in the string.
+
+### Functionality:
+#### 1. load_words(file_path):
+
+#### 2. split_text(text):
+
+#### 3. valid_words(words, english_words):
+
+#### 4. calculate__percentage(valid_count, total_count):
+
+
 # Task 4: Export Model as JSON File
+### Overview:
+Export your trigram model as a JavaScript Object Notation (JSON) file, preserving its structure and data. 
+Save the file in your repository with the name trigrams.json to ensure easy sharing and future use in various applications.
+
+### Functionality:
+
