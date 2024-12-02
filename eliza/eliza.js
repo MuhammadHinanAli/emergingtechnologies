@@ -21,7 +21,8 @@ function getResponse(input) {
 
 function appendMessage(sender, message) {
     const messageElement = document.createElement("p");
-    messageElement.textContent = `${sender}: ${message}`;
+    messageElement.classList.add(sender === "You" ? "user-message" : "eliza-message");
+    messageElement.textContent = message;
     chatHistory.appendChild(messageElement);
     chatHistory.scrollTop = chatHistory.scrollHeight;
 }
