@@ -5,7 +5,6 @@ const userInput = document.getElementById("user-input");
 
 // Array of responses with keywords
 const elizaResponses = [
-    { keyword: "hi", response: "Hi there! How can I help you today?" },
     { keyword: "hello", response: "Hi there! How can I help you today?" },
     { keyword: "problem", response: "Can you tell me more about your problem?" },
     { keyword: "i feel", response: "Why do you feel that way?" },
@@ -13,8 +12,30 @@ const elizaResponses = [
     { keyword: "thank", response: "You're welcome! How else can I assist you?" },
     { keyword: "mother", response: "Tell me more about your mother." },
     { keyword: "father", response: "Tell me more about your father." },
+    { keyword: "always", response: "Can you think of a specific example?" },
+    { keyword: "never", response: "Why do you think that is?" },
     { keyword: "default", response: "I'm not sure I understand. Can you elaborate?" },
 ];
+
+// Reflections dictionary to transform user input
+const reflections = {
+    "i am": "you are",
+    "you are": "I am",
+    "i feel": "you feel",
+    "my": "your",
+    "your": "my",
+    "me": "you",
+    "you": "me",
+    "i want": "you want",
+    "i need": "you need",
+};
+
+// Function to reflect user input
+function reflectInput(input) {
+    const words = input.split(" ");
+    const reflectedWords = words.map((word) => reflections[word.toLowerCase()] || word);
+    return reflectedWords.join(" ");
+}
 
 // Function to find an appropriate response based on user input
 function getResponse(input) {
@@ -23,7 +44,8 @@ function getResponse(input) {
     // Check each keyword in the response array
     for (const item of elizaResponses) {
         if (normalizedInput.includes(item.keyword)) {
-            return item.response; // Return the matching response
+            const reflection = reflectInput(input); // Reflect the user's input
+            return `${item.response} ${reflection ? `You said: "${reflection}".` : ""}`; // Include reflection in the response
         }
     }
 
