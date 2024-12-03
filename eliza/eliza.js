@@ -3,57 +3,100 @@ const chatHistory = document.getElementById("chat-history");
 const chatForm = document.getElementById("chat-form");
 const userInput = document.getElementById("user-input");
 
-// Array of responses with keywords
-const elizaResponses = [
-    { keyword: "hello", response: "Hi there! How can I help you today?" },
-    { keyword: "problem", response: "Can you tell me more about your problem?" },
-    { keyword: "i feel", response: "Why do you feel that way?" },
-    { keyword: "sorry", response: "There's no need to apologize." },
-    { keyword: "thank", response: "You're welcome! How else can I assist you?" },
-    { keyword: "mother", response: "Tell me more about your mother." },
-    { keyword: "father", response: "Tell me more about your father." },
-    { keyword: "always", response: "Can you think of a specific example?" },
-    { keyword: "never", response: "Why do you think that is?" },
-    { keyword: "default", response: "I'm not sure I understand. Can you elaborate?" },
-];
-
-// Reflections dictionary to transform user input
-const reflections = {
-    "i am": "you are",
-    "you are": "I am",
-    "i feel": "you feel",
-    "my": "your",
-    "your": "my",
-    "me": "you",
-    "you": "me",
-    "i want": "you want",
-    "i need": "you need",
+// Custom responses based on patterns
+const responses = {
+    "hello|hi|hey": [
+        "Hello! How are you feeling today?",
+        "Hi there! What’s on your mind?",
+        "Hey! How can I help you?",
+    ],
+    "you remind me of (.*)": [
+        "Why do you think I remind you of {0}?",
+        "What makes you think of {0} when talking to me?",
+        "Is it a good feeling to be reminded of {0}?",
+    ],
+    "(.*) mother|father|family|parent(.*)": [
+        "Tell me more about your family.",
+        "How does that make you feel about your family?",
+        "What role does your family play in your thoughts?",
+    ],
+    "(.*) I need (.*)": [
+        "Why do you need {1}?",
+        "Would getting {1} really help you?",
+        "What if you didn’t need {1}?",
+    ],
+    "(.*) I am (.*)": [
+        "Why do you think you are {1}?",
+        "How long have you felt that way?",
+        "What made you feel like {1}?",
+    ],
+    "(.*) I feel (.*)": [
+        "Why do you feel {1}?",
+        "Does feeling {1} happen often?",
+        "How does that feeling affect you?",
+    ],
+    "(.*) (sorry|apologize)(.*)": [
+        "No need to apologize.",
+        "Apologies aren't necessary. Why do you feel that way?",
+        "It’s okay to feel that way.",
+    ],
+    "bye|goodbye|exit": [
+        "Goodbye! Take care.",
+        "Thank you for sharing. Goodbye!",
+        "Bye! I’m here if you need to talk again.",
+    ],
+    "(.*)": [
+        "Can you tell me more?",
+        "Why do you say that?",
+        "How does that make you feel?",
+        "What do you mean by that?",
+        "Interesting... go on.",
+    ],
 };
 
-// Function to reflect user input
+// Reflections dictionary to reframe user input
+const reflections = {
+    I: "you",
+    me: "you",
+    my: "your",
+    am: "are",
+    you: "I",
+    your: "my",
+    yours: "mine",
+    are: "am",
+};
+
+// Function to reflect user input dynamically
 function reflectInput(input) {
     const words = input.split(" ");
     const reflectedWords = words.map((word) => reflections[word.toLowerCase()] || word);
     return reflectedWords.join(" ");
 }
 
-// Function to find an appropriate response based on user input
+// Function to find a suitable response
 function getResponse(input) {
-    const normalizedInput = input.toLowerCase(); // Convert input to lowercase for easier matching
+    const normalizedInput = input.toLowerCase();
 
-    // Check each keyword in the response array
-    for (const item of elizaResponses) {
-        if (normalizedInput.includes(item.keyword)) {
-            const reflection = reflectInput(input); // Reflect the user's input
-            return `${item.response} ${reflection ? `You said: "${reflection}".` : ""}`; // Include reflection in the response
+    // Loop through the responses to find a matching pattern
+    for (const pattern in responses) {
+        const regex = new RegExp(pattern, "i");
+        const match = normalizedInput.match(regex);
+
+        if (match) {
+            const possibleResponses = responses[pattern];
+            const response = possibleResponses[Math.floor(Math.random() * possibleResponses.length)];
+
+            // Replace placeholders in the response with matched groups
+            const reflectedInput = match.slice(1).map((group) => reflectInput(group || ""));
+            return response.replace(/\{(\d+)\}/g, (_, index) => reflectedInput[index] || "");
         }
     }
 
-    // Default response if no keywords match
-    return "I'm not sure I understand. Can you elaborate?";
+    // Default fallback response
+    return "Can you elaborate on that?";
 }
 
-// Function to add a message to the chat history
+// Function to append a message to the chat history
 function appendMessage(sender, message) {
     const messageElement = document.createElement("p");
     messageElement.classList.add(sender === "You" ? "user-message" : "eliza-message");
