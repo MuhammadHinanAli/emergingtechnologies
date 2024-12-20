@@ -95,14 +95,68 @@ Thwn it Splits the string into individual words and check each one against the w
 After which it calculates the percentage of valid English words in the string.
 
 ### Features
+- **Load English Words:** Reads a list of valid English words from a text file.
 
+- **Word Extraction:** Extracts individual words from the generated text.
+
+= **Validation:** Counts how many generated words are valid English words.
+
+- **Percentage Calculation:** Computes the percentage of valid English words in the generated text.
 
 
 ### Functionality:
 
+1. load_words(file_path)
 
+- Loads a list of valid English words from a text file.
 
+- Input:
 
+- file_path (str): Path to the file containing the English words, with each word on a separate line.
+
+- Output:
+
+- A set of lowercase English words.
+
+2. split_text(text)
+
+- Splits a block of text into individual words using regular expressions.
+
+- Input:
+
+- text (str): A string of text to be split into words.
+
+- Output:
+
+- A list of extracted words.
+
+3. valid_words(words, english_words)
+
+- Counts how many of the generated words are valid English words.
+
+- Input:
+
+- words (list): A list of words extracted from the generated text.
+
+- english_words (set): A set of valid English words.
+
+- Output:
+
+- An integer representing the count of valid English words.
+
+4. calculate_percentage(valid_count, total_count)
+
+- Calculates the percentage of valid English words in the generated text.
+
+- Input:
+
+- valid_count (int): The number of valid English words in the generated text.
+
+- total_count (int): The total number of words in the generated text.
+
+- Output:
+
+- A float representing the percentage of valid English words.
 
 # Task 4: Export Model as JSON File
 ### Overview:
@@ -119,15 +173,15 @@ Also saves the file in your repository with the name trigrams.json to ensure eas
 
 ### Functionality:
 
-* 1. Function: export_to_json
+1. Function: export_to_json
 
 - The export_to_json function exports the trigram model to a JSON file.
 
 2. Parameters
 
-  - trigram_model (dict): The trigram model to be exported, represented as a Python dictionary.
+- trigram_model (dict): The trigram model to be exported, represented as a Python dictionary.
 
-  - output_file (str): The name of the JSON file where the trigram model will be saved.
+- output_file (str): The name of the JSON file where the trigram model will be saved.
 
 # References
 
