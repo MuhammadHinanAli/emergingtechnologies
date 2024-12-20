@@ -121,13 +121,13 @@ Also saves the file in your repository with the name trigrams.json to ensure eas
 
 1. Function: export_to_json
 
--The export_to_json function exports the trigram model to a JSON file.
+  - The export_to_json function exports the trigram model to a JSON file.
 
 2. Parameters
 
-- trigram_model (dict): The trigram model to be exported, represented as a Python dictionary.
+  - trigram_model (dict): The trigram model to be exported, represented as a Python dictionary.
 
-- output_file (str): The name of the JSON file where the trigram model will be saved.
+  - output_file (str): The name of the JSON file where the trigram model will be saved.
 
 # References
 
