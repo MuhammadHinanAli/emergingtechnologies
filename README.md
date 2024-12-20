@@ -94,12 +94,12 @@ This list is used to analyze the 10,000-character string generated earlier.
 Thwn it Splits the string into individual words and check each one against the word list to determine if it is a valid English word. 
 After which it calculates the percentage of valid English words in the string.
 
-### Features
+### **Features**
 - **Load English Words:** Reads a list of valid English words from a text file.
 
 - **Word Extraction:** Extracts individual words from the generated text.
 
-= **Validation:** Counts how many generated words are valid English words.
+- **Validation:** Counts how many generated words are valid English words.
 
 - **Percentage Calculation:** Computes the percentage of valid English words in the generated text.
 
