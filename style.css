@@ -75,29 +75,3 @@ button {
     border-radius: 25px;
     cursor: pointer;
 }
-
-#chat-history {
-    max-height: 300px;
-    /* Set a fixed height for the chat history */
-    overflow-y: auto;
-    /* Enable vertical scrolling */
-    padding: 10px;
-    border: 1px solid #ccc;
-    /* Optional: Add a border */
-    background-color: #f9f9f9;
-    /* Optional: Set background color */
-}
-
-/* Optional: Style the scrollbar for better appearance */
-#chat-history::-webkit-scrollbar {
-    width: 8px;
-}
-
-#chat-history::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-}
-
-#chat-history::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}

@@ -107,16 +107,6 @@ function appendMessage(sender, message) {
     chatHistory.scrollTop = chatHistory.scrollHeight;
 }
 
-function updateChatHistory(message, sender) {
-    const chatHistory = document.getElementById("chat-history");
-    const messageElement = document.createElement("div");
-    messageElement.className = sender; // Add a class for sender styling (e.g., "user" or "eliza")
-    messageElement.textContent = message;
-    chatHistory.appendChild(messageElement);
-    chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to the latest message
-}
-
-
 // Event listener for form submission
 chatForm.addEventListener("submit", (e) => {
     e.preventDefault(); // Prevent page refresh on form submission
