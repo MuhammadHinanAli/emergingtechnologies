@@ -18,7 +18,7 @@ The model can provide insights into frequency of specific letter sequences.
 ### Functionality:
 1. **Text Cleaning**
 
-- The clean_text(file_paths) function reads and processes the text files to remove unwanted characters and formats the text.
+The clean_text(file_paths) function reads and processes the text files to remove unwanted characters and formats the text.
 
 - **Input:** A list of file paths.
 
@@ -26,7 +26,7 @@ The model can provide insights into frequency of specific letter sequences.
 
 2. **Trigram Generation**
 
-- The generate_trigrams(text) function extracts all possible trigrams (three consecutive characters) from the cleaned text and counts their occurrences.
+The generate_trigrams(text) function extracts all possible trigrams (three consecutive characters) from the cleaned text and counts their occurrences.
 
 - **Input:** Cleaned text string.
 
@@ -34,7 +34,7 @@ The model can provide insights into frequency of specific letter sequences.
 
 3. **Display Top Trigrams**
 
-- The display_top_trigrams(trigram_counts, n=100) function sorts the trigrams by frequency and displays the top n most frequent ones.
+The display_top_trigrams(trigram_counts, n=100) function sorts the trigrams by frequency and displays the top n most frequent ones.
 
 - **Input:** Trigram frequency dictionary, number of top trigrams to display.
 
@@ -59,31 +59,31 @@ Repeats until the string reaches the desired length.
 ### Functionality:
 1. **generate_next_char(trigram_counts, prev_two_chars)**
 
-- Predicts the next character based on the previous two characters and the trigram frequency model.
+Predicts the next character based on the previous two characters and the trigram frequency model.
 
 - **Input:**
 
-- trigram_counts (dict): A dictionary containing trigram frequencies.
+trigram_counts (dict): A dictionary containing trigram frequencies.
 
-- prev_two_chars (str): The last two characters of the generated text.
+prev_two_chars (str): The last two characters of the generated text.
 
 - **Output:**
 
-- A single character (str) predicted based on trigram probabilities.
+A single character (str) predicted based on trigram probabilities.
 
 2. **generate_text(trigram_counts, length=10000)**
 
-- Generates a string of the specified length using the trigram model.
+Generates a string of the specified length using the trigram model.
 
 - **Input:**
 
-- trigram_counts (dict): A dictionary containing trigram frequencies.
+trigram_counts (dict): A dictionary containing trigram frequencies.
 
-- length (int): The desired length of the generated text (default: 10,000 characters).
+length (int): The desired length of the generated text (default: 10,000 characters).
 
 - **Output:**
 
-- A string (str) containing the generated text.
+A string (str) containing the generated text.
 
 
 # Task 3: Analyze Your Model
@@ -108,55 +108,55 @@ After which it calculates the percentage of valid English words in the string.
 
 1. **load_words(file_path)**
 
-- Loads a list of valid English words from a text file.
+Loads a list of valid English words from a text file.
 
 - **Input:**
 
-- file_path (str): Path to the file containing the English words, with each word on a separate line.
+file_path (str): Path to the file containing the English words, with each word on a separate line.
 
 - **Output:**
 
-- A set of lowercase English words.
+A set of lowercase English words.
 
 2. **split_text(text)**
 
-- Splits a block of text into individual words using regular expressions.
+Splits a block of text into individual words using regular expressions.
 
 - **Input:**
 
-- text (str): A string of text to be split into words.
+text (str): A string of text to be split into words.
 
 - **Output:**
 
-- A list of extracted words.
+A list of extracted words.
 
 3. **valid_words(words, english_words)**
 
-- Counts how many of the generated words are valid English words.
+Counts how many of the generated words are valid English words.
 
 - **Input:**
 
-- words (list): A list of words extracted from the generated text.
+words (list): A list of words extracted from the generated text.
 
-- english_words (set): A set of valid English words.
+english_words (set): A set of valid English words.
 
 - **Output:**
 
-- An integer representing the count of valid English words.
+An integer representing the count of valid English words.
 
 4. **calculate_percentage(valid_count, total_count)**
 
-- Calculates the percentage of valid English words in the generated text.
+Calculates the percentage of valid English words in the generated text.
 
 - **Input:**
 
-- valid_count (int): The number of valid English words in the generated text.
+valid_count (int): The number of valid English words in the generated text.
 
-- total_count (int): The total number of words in the generated text.
+total_count (int): The total number of words in the generated text.
 
 - **Output:**
 
-- A float representing the percentage of valid English words.
+A float representing the percentage of valid English words.
 
 # Task 4: Export Model as JSON File
 ### Overview:
@@ -175,13 +175,13 @@ Also saves the file in your repository with the name trigrams.json to ensure eas
 
 1. **Function: export_to_json**
 
-- The export_to_json function exports the trigram model to a JSON file.
+The export_to_json function exports the trigram model to a JSON file.
 
 2. **Parameters**
 
-- trigram_model (dict): The trigram model to be exported, represented as a Python dictionary.
+trigram_model (dict): The trigram model to be exported, represented as a Python dictionary.
 
-- output_file (str): The name of the JSON file where the trigram model will be saved.
+output_file (str): The name of the JSON file where the trigram model will be saved.
 
 # References
 
