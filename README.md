@@ -9,36 +9,36 @@ The model can provide insights into frequency of specific letter sequences.
 
 ### Features:
 
-Text Cleaning: Reads and preprocesses text files by removing unwanted characters and converting the text to uppercase.
+- **Text Cleaning:** Reads and preprocesses text files by removing unwanted characters and converting the text to uppercase.
 
-Trigram Generation: Extracts all possible trigrams from the cleaned text and counts their occurrences.
+- **Trigram Generation:** Extracts all possible trigrams from the cleaned text and counts their occurrences.
 
-Frequency Display: Displays the most frequent trigrams along with their counts.
+- **Frequency Display:** Displays the most frequent trigrams along with their counts.
 
 ### Functionality:
-1. Text Cleaning
+1. **Text Cleaning**
 
 - The clean_text(file_paths) function reads and processes the text files to remove unwanted characters and formats the text.
 
-- Input: A list of file paths.
+- **Input:** A list of file paths.
 
-- Output: A cleaned, uppercase string containing alphabetic characters, spaces, and full stops.
+- **Output:** A cleaned, uppercase string containing alphabetic characters, spaces, and full stops.
 
-2. Trigram Generation
+2. **Trigram Generation**
 
 - The generate_trigrams(text) function extracts all possible trigrams (three consecutive characters) from the cleaned text and counts their occurrences.
 
-- Input: Cleaned text string.
+- **Input:** Cleaned text string.
 
-- Output: A dictionary where keys are trigrams, and values are their counts.
+- **Output:** A dictionary where keys are trigrams, and values are their counts.
 
-3. Display Top Trigrams
+3. **Display Top Trigrams**
 
 - The display_top_trigrams(trigram_counts, n=100) function sorts the trigrams by frequency and displays the top n most frequent ones.
 
-- Input: Trigram frequency dictionary, number of top trigrams to display.
+- **Input:** Trigram frequency dictionary, number of top trigrams to display.
 
-- Output: Prints the top n trigrams and their counts to the console.
+- **Output:** Prints the top n trigrams and their counts to the console.
 
 
 # Task 2: Third-order letter approximation generation#
@@ -50,38 +50,38 @@ Repeats until the string reaches the desired length.
 
 ### Features
 
-- Character Prediction: Predicts the next character using trigram probabilities.
+- **Character Prediction:** Predicts the next character using trigram probabilities.
 
-- Text Generation: Creates a long string of text by repeatedly predicting the next character.
+- **Text Generation:** Creates a long string of text by repeatedly predicting the next character.
 
-- Output: Saves the generated text to a file and prints it to the console.
+- **Output:** Saves the generated text to a file and prints it to the console.
 
 ### Functionality:
-1. generate_next_char(trigram_counts, prev_two_chars)
+1. **generate_next_char(trigram_counts, prev_two_chars)**
 
 - Predicts the next character based on the previous two characters and the trigram frequency model.
 
-- Input:
+- **Input:**
 
 - trigram_counts (dict): A dictionary containing trigram frequencies.
 
 - prev_two_chars (str): The last two characters of the generated text.
 
-- Output:
+- **Output:**
 
 - A single character (str) predicted based on trigram probabilities.
 
-2. generate_text(trigram_counts, length=10000)
+2. **generate_text(trigram_counts, length=10000)**
 
 - Generates a string of the specified length using the trigram model.
 
-- Input:
+- **Input:**
 
 - trigram_counts (dict): A dictionary containing trigram frequencies.
 
 - length (int): The desired length of the generated text (default: 10,000 characters).
 
-- Output:
+- **Output:**
 
 - A string (str) containing the generated text.
 
@@ -94,7 +94,7 @@ This list is used to analyze the 10,000-character string generated earlier.
 Thwn it Splits the string into individual words and check each one against the word list to determine if it is a valid English word. 
 After which it calculates the percentage of valid English words in the string.
 
-### **Features**
+### Features
 - **Load English Words:** Reads a list of valid English words from a text file.
 
 - **Word Extraction:** Extracts individual words from the generated text.
@@ -106,55 +106,55 @@ After which it calculates the percentage of valid English words in the string.
 
 ### Functionality:
 
-1. load_words(file_path)
+1. **load_words(file_path)**
 
 - Loads a list of valid English words from a text file.
 
-- Input:
+- **Input:**
 
 - file_path (str): Path to the file containing the English words, with each word on a separate line.
 
-- Output:
+- **Output:**
 
 - A set of lowercase English words.
 
-2. split_text(text)
+2. **split_text(text)**
 
 - Splits a block of text into individual words using regular expressions.
 
-- Input:
+- **Input:**
 
 - text (str): A string of text to be split into words.
 
-- Output:
+- **Output:**
 
 - A list of extracted words.
 
-3. valid_words(words, english_words)
+3. **valid_words(words, english_words)**
 
 - Counts how many of the generated words are valid English words.
 
-- Input:
+- **Input:**
 
 - words (list): A list of words extracted from the generated text.
 
 - english_words (set): A set of valid English words.
 
-- Output:
+- **Output:**
 
 - An integer representing the count of valid English words.
 
-4. calculate_percentage(valid_count, total_count)
+4. **calculate_percentage(valid_count, total_count)**
 
 - Calculates the percentage of valid English words in the generated text.
 
-- Input:
+- **Input:**
 
 - valid_count (int): The number of valid English words in the generated text.
 
 - total_count (int): The total number of words in the generated text.
 
-- Output:
+- **Output:**
 
 - A float representing the percentage of valid English words.
 
@@ -173,11 +173,11 @@ Also saves the file in your repository with the name trigrams.json to ensure eas
 
 ### Functionality:
 
-1. Function: export_to_json
+1. **Function: export_to_json**
 
 - The export_to_json function exports the trigram model to a JSON file.
 
-2. Parameters
+2. **Parameters**
 
 - trigram_model (dict): The trigram model to be exported, represented as a Python dictionary.
 
@@ -185,3 +185,6 @@ Also saves the file in your repository with the name trigrams.json to ensure eas
 
 # References
 
+- https://stackoverflow.com/
+- https://chatgpt.com/
+- Lecture/Lab Notes Provided by Lecturer
