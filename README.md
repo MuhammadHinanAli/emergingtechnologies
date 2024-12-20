@@ -119,9 +119,9 @@ Also saves the file in your repository with the name trigrams.json to ensure eas
 
 ### Functionality:
 
-1. Function: export_to_json
+* 1. Function: export_to_json
 
-  - The export_to_json function exports the trigram model to a JSON file.
+- The export_to_json function exports the trigram model to a JSON file.
 
 2. Parameters
 
